@@ -1,0 +1,192 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-wdsbt-wdsbt-carousel-block {
+  --gap: 1rem;
+  --scrollbar-height: 8px;
+  --scrollbar-thumb-hover-color: #666;
+  position: relative;
+  margin-bottom: 2rem;
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-container {
+  display: flex;
+  gap: var(--gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: var(--scrollbar-height);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-container::-webkit-scrollbar {
+  display: none;
+}
+.wp-block-wdsbt-wdsbt-carousel-block.has-scrollbar .carousel-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin-bottom: calc(var(--scrollbar-height) + 0.5rem);
+}
+.wp-block-wdsbt-wdsbt-carousel-block.has-scrollbar .carousel-container::-webkit-scrollbar {
+  display: none;
+}
+.wp-block-wdsbt-wdsbt-carousel-block.has-scrollbar .carousel-scrollbar {
+  position: relative;
+  height: var(--scrollbar-height);
+  background: var(--wp--preset--color--grey-200);
+  border-radius: calc(var(--scrollbar-height) / 2);
+  cursor: pointer;
+}
+.wp-block-wdsbt-wdsbt-carousel-block.has-scrollbar .carousel-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: var(--wp--preset--color--primary-500);
+  border-radius: calc(var(--scrollbar-height) / 2);
+  cursor: grab;
+  min-width: 20px;
+}
+.wp-block-wdsbt-wdsbt-carousel-block.has-scrollbar .carousel-scrollbar-thumb:active {
+  cursor: grabbing;
+  background: var(--wp--preset--color--primary-200);
+}
+.wp-block-wdsbt-wdsbt-carousel-block.has-scrollbar .carousel-scrollbar-thumb:hover {
+  background: var(--wp--preset--color--primary-200);
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-slide {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-slide:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .wp-block-wdsbt-wdsbt-carousel-block .carousel-slide {
+    width: 40%;
+  }
+}
+@media (min-width: 1024px) {
+  .wp-block-wdsbt-wdsbt-carousel-block .carousel-slide {
+    width: 28.5714285714%;
+  }
+}
+@media (min-width: 1024px) {
+  .wp-block-wdsbt-wdsbt-carousel-block .carousel-slide.alignfull {
+    width: 22.2222222222%;
+  }
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-dots {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-dots.hidden {
+  display: none;
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: var(--wp--preset--color--black);
+  opacity: 0.3;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.3s ease;
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-dots button.active {
+  opacity: 1;
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-dots button:hover {
+  opacity: 0.8;
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-buttons {
+  display: flex;
+  gap: 1rem;
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-buttons button .button-icon {
+  position: relative;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-buttons button .button-icon::before, .wp-block-wdsbt-wdsbt-carousel-block .carousel-buttons button .button-icon::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 2px;
+  background: currentColor;
+  left: 0;
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-buttons button .button-icon::before {
+  transform: rotate(-45deg);
+  transform-origin: left;
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-buttons button .button-icon::after {
+  transform: rotate(45deg);
+  transform-origin: left;
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-buttons button.prev-slide .button-icon {
+  transform: rotate(-180deg);
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-buttons button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-buttons.button-style-raised button {
+  border: none;
+  background: var(--wp--preset--color--white, #fff);
+  color: var(--wp--preset--color--contrast, #000);
+  box-shadow: 0px 0px 1px 0px rgba(48, 49, 51, 0.05), 0px 4px 8px 0px rgba(48, 49, 51, 0.1);
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-buttons.button-style-raised button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0px 0px 1px 0px rgba(48, 49, 51, 0.05), 0px 6px 10px 0px rgba(48, 49, 51, 0.15);
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-buttons.button-style-raised button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0px 0px 1px 0px rgba(48, 49, 51, 0.05), 0px 4px 8px 0px rgba(48, 49, 51, 0.1);
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-buttons.button-style-outlined button {
+  background: transparent;
+  border: 2px solid var(--wp--preset--color--contrast, #000);
+  color: var(--wp--preset--color--contrast, #000);
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-buttons.button-style-outlined button:hover:not(:disabled) {
+  background: var(--wp--preset--color--contrast, #000);
+  color: var(--wp--preset--color--base, #fff);
+}
+.wp-block-wdsbt-wdsbt-carousel-block .carousel-buttons.button-style-outlined button:active:not(:disabled) {
+  opacity: 0.8;
+}

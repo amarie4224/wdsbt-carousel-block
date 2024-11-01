@@ -1,0 +1,242 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-wdsbt-wdsbt-carousel-block {
+	--gap: 1rem;
+	--scrollbar-height: 8px;
+	--scrollbar-thumb-hover-color: #666;
+	position: relative;
+	margin-bottom: 2rem;
+
+	.carousel-container {
+		display: flex;
+		gap: var(--gap);
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		padding-bottom: var(--scrollbar-height);
+
+		// Default - hide scrollbar
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+
+	// Custom scrollbar styles when enabled
+	&.has-scrollbar {
+		.carousel-container {
+			// Remove default scrollbar
+			&::-webkit-scrollbar {
+				display: none;
+			}
+			scrollbar-width: none;
+			-ms-overflow-style: none;
+			margin-bottom: calc(var(--scrollbar-height) + 0.5rem);
+		}
+
+		// Create custom scrollbar that's always visible
+		.carousel-scrollbar {
+			position: relative;
+			height: var(--scrollbar-height);
+			background: var(--wp--preset--color--grey-200);
+			border-radius: calc(var(--scrollbar-height) / 2);
+			cursor: pointer;
+
+			&-thumb {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				background: var(--wp--preset--color--primary-500);
+				border-radius: calc(var(--scrollbar-height) / 2);
+				cursor: grab;
+				min-width: 20px; // Ensure thumb is always grippable
+
+				&:active {
+					cursor: grabbing;
+					background: var(--wp--preset--color--primary-200);
+				}
+
+				&:hover {
+					background: var(--wp--preset--color--primary-200);
+				}
+			}
+		}
+	}
+
+	.carousel-slide {
+		scroll-snap-align: start;
+		flex: 0 0 auto;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+		&:hover {
+			transform: translateY(-8px);
+			box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+		}
+
+		// Mobile first - default to single slide
+		width: 100%;
+
+		// Tablet: 2.5 slides
+		@media (min-width: 768px) and (max-width: 1023px) {
+			width: calc(100% / 2.5);
+		}
+
+		// Desktop
+		@media (min-width: 1024px) {
+			// Content-width: 3.5 slides
+			width: calc(100% / 3.5);
+		}
+
+		// Full-width override
+		&.alignfull {
+			@media (min-width: 1024px) {
+				width: calc(100% / 4.5);
+			}
+		}
+
+		// Ensure images inside slides maintain aspect ratio
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+	}
+
+	// Navigation container
+	.carousel-navigation {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 1rem;
+	}
+
+	// Dots container - only show when enabled
+	.carousel-dots {
+		display: flex;
+		gap: 0.5rem;
+		margin-right: auto;
+
+		&.hidden {
+			display: none;
+		}
+
+		button {
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			border: none;
+			background: var(--wp--preset--color--black);
+			opacity: 0.3;
+			cursor: pointer;
+			padding: 0;
+			transition: opacity 0.3s ease;
+
+			&.active {
+				opacity: 1;
+			}
+
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+
+	// Arrow buttons
+	.carousel-buttons {
+		display: flex;
+		gap: 1rem;
+
+		button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 40px;
+			height: 40px;
+			border-radius: 100%;
+			cursor: pointer;
+			transition: all 0.2s ease;
+			position: relative;
+
+			.button-icon {
+				position: relative;
+				width: 20px; // Increased width for arrow
+				height: 2px; // Height of arrow shaft
+				background: currentColor;
+
+				&::before,
+				&::after {
+					content: '';
+					position: absolute;
+					width: 8px; // Length of arrow head
+					height: 2px; // Thickness of arrow head
+					background: currentColor;
+					right: 0; // Position at end of shaft
+				}
+
+				&::before {
+					transform: rotate(45deg);
+					transform-origin: right;
+				}
+
+				&::after {
+					transform: rotate(-45deg);
+					transform-origin: right;
+				}
+			}
+
+			// Previous button arrow
+			&.prev-slide .button-icon {
+				transform: rotate(180deg); // Flip the arrow
+			}
+
+			&:disabled {
+				opacity: 0.3;
+				cursor: not-allowed;
+			}
+		}
+
+		// Raised button style
+		&.button-style-raised button {
+			border: none;
+			background: var(--wp--preset--color--white, #fff);
+			color: var(--wp--preset--color--contrast, #000);
+			box-shadow: 0px 0px 1px 0px rgba(48, 49, 51, 0.05),
+					0px 4px 8px 0px rgba(48, 49, 51, 0.10);
+
+			&:hover:not(:disabled) {
+				transform: translateY(-1px);
+				box-shadow: 0px 0px 1px 0px rgba(48, 49, 51, 0.05),
+						0px 6px 10px 0px rgba(48, 49, 51, 0.15);
+			}
+
+			&:active:not(:disabled) {
+				transform: translateY(0);
+				box-shadow: 0px 0px 1px 0px rgba(48, 49, 51, 0.05),
+						0px 4px 8px 0px rgba(48, 49, 51, 0.10);
+			}
+		}
+
+		// Outlined button style
+		&.button-style-outlined button {
+			background: transparent;
+			border: 2px solid var(--wp--preset--color--contrast, #000);
+			color: var(--wp--preset--color--contrast, #000);
+
+			&:hover:not(:disabled) {
+				background: var(--wp--preset--color--contrast, #000);
+				color: var(--wp--preset--color--base, #fff);
+			}
+
+			&:active:not(:disabled) {
+				opacity: 0.8;
+			}
+		}
+	}
+}
